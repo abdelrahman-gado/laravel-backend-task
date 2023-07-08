@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/auth/register', [AuthController::class, 'registerUser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser']);
+Route::post('register', [AuthController::class, 'registerUser']);
+Route::post('login', [AuthController::class, 'loginUser'])->name('login');
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('tags', TagController::class);
+});
