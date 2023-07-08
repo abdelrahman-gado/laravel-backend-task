@@ -33,4 +33,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    /**
+     * Summary of posts
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
