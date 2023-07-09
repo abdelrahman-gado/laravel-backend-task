@@ -207,17 +207,15 @@ class PostController extends Controller
                 ], 404);
             }
 
+            // delete also post tag rows  in the junction table
+            // that has relation with current post
             foreach ($post->postTagPivot as $postTagPivot) {
                 $postTagPivot->delete();
             }
 
             $post->delete();
 
-            return response()->json([
-                'status' => true,
-                'message' => 'The Post is deleted successfully',
-                $post
-            ]);
+            return response()->json($post);
 
         } catch (\Throwable $e) {
             return response()->json([
@@ -276,6 +274,8 @@ class PostController extends Controller
 
             $postTagItems = Post_Tag::onlyTrashed()->where('post_id', $deletedPost->id)->get();
 
+            // restore the rows in the post_tag junction first,
+            // then restore The deleted post.
             foreach($postTagItems as $item) {
                 $item->restore();
             }
