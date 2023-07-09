@@ -1,0 +1,585 @@
+{
+	"info": {
+		"_postman_id": "6b85d27c-4845-420d-9609-2eee3591293d",
+		"name": "laravel-backend-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "get all tags",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zfQL10TlEok7Nhh0yqnwGyA2xdSkFWnquVM2jL30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/tags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zfQL10TlEok7Nhh0yqnwGyA2xdSkFWnquVM2jL30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pop-sci\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zfQL10TlEok7Nhh0yqnwGyA2xdSkFWnquVM2jL30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pop-science2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tags/1?_method=PUT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tags",
+								"1"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zfQL10TlEok7Nhh0yqnwGyA2xdSkFWnquVM2jL30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/tags/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tags",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zfQL10TlEok7Nhh0yqnwGyA2xdSkFWnquVM2jL30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/tags/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tags",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\": \"01224567899\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Abdo Gado12\",\n    \"phoneNumber\": \"01224566899\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Js",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "Js is one of the weather wonders",
+									"type": "default"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/home/abdogado/Pictures/Screenshot from 2023-07-04 22-54-15.png"
+								},
+								{
+									"key": "pinned",
+									"value": "0",
+									"type": "default"
+								},
+								{
+									"key": "tags[0]",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "tags[1]",
+									"value": "3",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "PHP",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "PHP is awesome",
+									"type": "default"
+								},
+								{
+									"key": "pinned",
+									"value": "0",
+									"type": "default"
+								},
+								{
+									"key": "tags[0]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/home/abdogado/Pictures/Screenshot from 2022-03-09 19-02-18.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts/2?_method=PUT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"2"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user deleted posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/deleted-posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deleted-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore a deleted post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SeUjUIDSK8tSrPmJ1KBCL0aZl1Xaz0ZQnbmIXqQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/posts/2/restore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"2",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "get stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
