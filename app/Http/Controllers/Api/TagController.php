@@ -58,11 +58,7 @@ class TagController extends Controller
 
             $tag = Tag::create(['name' => $request->name]);
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Tag created successfully',
-                $tag
-            ]);
+            return response()->json($tag);
 
         } catch (\Throwable $e) {
 
@@ -92,10 +88,7 @@ class TagController extends Controller
                 ], 404);
             }
 
-            return response()->json([
-                'status' => true,
-                $tag
-            ]);
+            return response()->json($tag);
 
         } catch (\Throwable $e) {
 
@@ -142,11 +135,7 @@ class TagController extends Controller
             $tag['name'] = $request->name;
             $tag->save();
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Tag updated successfully',
-                $tag
-            ]);
+            return response()->json($tag);
 
         } catch (\Throwable $e) {
 
@@ -178,11 +167,7 @@ class TagController extends Controller
 
             $tag->delete();
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Tag deleted successfully',
-                $tag
-            ]);
+            return response()->json($tag);
 
         } catch (\Throwable $e) {
 
