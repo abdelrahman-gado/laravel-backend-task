@@ -46,11 +46,11 @@ class AuthController extends Controller
             ]);
 
             return response()->json([
-                'status' => true,
-                'message' => 'User created Successfully',
+                'id' => $user->id,
                 'name' => $user->name,
                 'phoneNumber' => $user->phoneNumber,
-                'password' => $user->password,
+                'created_at' => $user->created_at,
+                'updated_at' => $user->updated_at,
                 'token' => $user->createToken(self::TOKEN_NAME)->plainTextToken
             ]);
 
@@ -96,11 +96,11 @@ class AuthController extends Controller
             $user = User::where('phoneNumber', $request->phoneNumber)->first();
 
             return response()->json([
-                'status' => true,
-                'message' => 'User Logged In Successfully',
+                'id' => $user->id,
                 'name' => $user->name,
                 'phoneNumber' => $user->phoneNumber,
-                'password' => $user->password,
+                'created_at' => $user->created_at,
+                'updated_at' => $user->updated_at,
                 'token' => $user->createToken(self::TOKEN_NAME)->plainTextToken
             ], 200);
 
